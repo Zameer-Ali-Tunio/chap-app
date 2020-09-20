@@ -1,0 +1,183 @@
+<html lang="en">
+    <head>
+        <title>My Chat App</title>
+        <!-- Meta tag Keywords -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="My Chat App" />
+        <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+    
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        </script>
+        <!-- //Meta tag Keywords -->
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+              apiKey: "AIzaSyCoTBwKMKcN4VUBWEFSNlikmeKK9NZcpvg",
+              authDomain: "chat-app-cf6a5.firebaseapp.com",
+              databaseURL: "https://chat-app-cf6a5.firebaseio.com",
+              projectId: "chat-app-cf6a5",
+              storageBucket: "chat-app-cf6a5.appspot.com",
+              messagingSenderId: "883561518881",
+              appId: "1:883561518881:web:1bb18d829de4e74dd69060",
+              measurementId: "G-K08LL1DMLF"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+          </script>
+        <!-- //Firebase -->
+        <!-- Custom-Files -->
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap-CSS -->
+        <link href="css/style.css" rel='stylesheet' type='text/css' />
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+            <!-- Style-CSS -->
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <!-- Font-Awesome-Icons-CSS -->
+        <!-- //Custom-Files -->
+        
+        <!-- Web-Fonts -->
+        <link href="//fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese"
+            rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+        <!-- //Web-Fonts -->
+        
+    </head>
+<body>
+    <div class="bg-color py-4">
+        <div class="container">
+            <div id="main row">
+                <nav class="navbar bg-color navbar-light">
+            <!-- Brand -->
+                    <span class="navbar-brand px-3" >
+                        <img src="./images/logo-main.png" alt="logo" class="logo-main">
+                    </span>
+          
+            <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <i class="fa fa-ellipsis-v" style="color: black;"></i>
+                    </button>
+
+            <!-- Navbar links -->
+                    <div class="dropdown-menu dropdown-menu-right " id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                        <li class="dropdown-item">
+                            <a class="nav-link " href="#"><i class="fa fa-user"></i> Profile</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                        </li>
+                        <li class="dropdown-item ">
+                            <a class="nav-link" href="login.html"><i class="fa fa-sign-out"></i> Logout</a>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="bg-wh row mx-0">
+                    <div class="col-lg-4 col-sm-12 p-0 bg-light pro-div">
+                        <div class="Profile-d  p-2 bg-color ">
+                            <img src="" id="user-pic"alt="Pic Profile" class="mr-2 rounded-circle" style="width:60px;">
+                             <h3 class="name-p" id="user-name"></h3>
+                        </div>
+                        <h5 class="p-2 bg-light font-weight-bold">Active Users</h5>
+                        <div  class="active-div">
+                        <div class="Profile-d mt-0 bg-color" >
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d my-2 bg-color">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d mt-0 bg-color" >
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d my-2 bg-color">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d mt-0 bg-color" >
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d my-2 bg-color">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d mt-0 bg-color" >
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d my-2 bg-color">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d mt-0 bg-color" >
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d my-2 bg-color">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d mt-0 bg-color" >
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        <div class="Profile-d my-2 bg-color">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-3 rounded-circle" style="width:60px;">
+                            <h4 class="name-p">Zameer Ali Tunio</h4>
+                        </div>
+                        </div>
+                    </div> 
+                    <div class="mainn-div col-lg-8   d-none d-lg-block  p-0">
+                        <div class="Profile-d  p-2 bg-color mb-1">
+                            <img src="./images/img_avatar3.png" alt="Pic Profile" class="mr-2 rounded-circle" style="width:60px;">
+                             <h3 class="name-p">Asadullah Class</h3>
+                             <a onclick="dltall()" onmouseover="this.style.cursor='pointer'">
+                             <i  class="fa fa-trash float-right mt-3 mx-3 " style="width: 20px;color: white;"></i></a>
+                             <!-- <a onclick="" onmouseover="this.style.cursor='pointer'">
+                             <i class="fa fa-check float-right mt-3 " style="width: 20px;color: white;"></i></a> -->
+                             
+                        </div>
+                        <div class="text-div" id="M-div">
+                            
+
+
+
+
+                        </div>
+                        <div class="bg-color p-2  text-center row bord m-0">
+                            <input type="text" id="T-Mess" placeholder="Type text" class="form-control col-9 " style="width: 400px; border-radius: 20px;">
+                            <button class="btn btn-primary pl-2 col-3" id="TM-send" style="border-radius: 20px;" onclick="send()">Send</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="javascript/main.js"></script>
+<script src="javascript/app.js"></script>
+</html>
